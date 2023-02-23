@@ -1,0 +1,40 @@
+<div>
+  <div class="mx-auto max-w-xl lg:mx-0">
+    <h1 class="mt-10 flex items-center text-sm font-semibold leading-6 text-brand">
+      Phoenix Framework
+      <small class="ml-3 rounded-full bg-brand/5 px-2 text-[0.8125rem] font-medium leading-6">
+        v1.7
+      </small>
+    </h1>
+    <p class="mt-4 text-[2rem] font-semibold leading-10 tracking-tighter text-zinc-900">
+      Peace of mind from prototype to production.
+    </p>
+    <p class="mt-4 text-base leading-7 text-zinc-600">
+      Build rich, interactive web applications quickly, with less code and fewer moving parts. Join our growing community of developers using Phoenix to craft APIs, HTML5 apps and more, for fun or at scale.
+    </p>
+    <div :if={@locale == "es"}>
+      <%!-- TESTING MODULE PLUG --%>
+      <%!-- http://localhost:4000/?locale=es --%>
+        <h2>BIEN VENIDO</h2>
+    </div>
+    <div :if={@locale == "en"}>
+        <h2>WELCOME</h2>
+    </div>
+    <%!-- Likewise, for comprehensions may be written as:
+      <ul>
+        <li :for={item <- @items}><%= item.name %></li>
+      </ul> --%>
+    <div>
+      <%!-- TESTING MODULE PLUG --%>
+      <%!-- http://localhost:4000/?locale=es --%>
+      <%!-- <%= if @locale == "es" do %>
+        <h2>BIEN VENIDO</h2>
+      <% else %>
+        <h2>WELCOME</h2>
+      <% end %> --%>
+    </div>
+    <div class="mt-6">
+      <.link href={~p"/hello"}>testing route</.link>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* This file is for your main application CSS */
+/* body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #1e293b;
+  border-radius: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #0f172a;
+} */
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

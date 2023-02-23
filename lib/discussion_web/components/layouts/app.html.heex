@@ -1,0 +1,57 @@
+<header class="w-full h-24">
+  <section class="w-11/12 max-w-screen-xl h-full mx-auto flex justify-between items-center">
+    <div>
+      <.link class="font-bold" href={~p"/"}>HOME</.link>
+    </div>
+    <nav class="h-full flex justify-center items-center">
+      <ul class="h-full flex items-center gap-5 uppercase font-bold text-sm">
+        <%= if @current_user do %>
+          <li>
+            <%= @current_user.email %>
+          </li>
+          <li>
+            <.link class="flex items-center gap-2 border-slate-900 border-r-4 pr-1" href={~p"/users/settings"}>
+              <Heroicons.cog_6_tooth class="h-6 w-6 stroke-current" />
+              <span>Settings</span>
+            </.link>
+          </li>
+          <li>
+            <.link class="bg-brand shadow-lg shadow-brand/50 py-2.5 px-4 rounded-md text-white font-semibold" href={~p"/users/log_out"} method="delete">Log out</.link>
+          </li>
+        <% else %>
+          <li class="hover:translate-y-[1px]">
+            <.link
+              class="bg-indigo-500 shadow-lg shadow-indigo-500/50 py-2.5 px-4 rounded-md text-white font-semibold"
+              href={~p"/users/register"}
+            >
+              Register
+            </.link>
+          </li>
+          <li class="hover:translate-y-[1px]">
+            <.link
+              class="bg-indigo-500 shadow-lg shadow-indigo-500/50 py-2.5 px-4 rounded-md text-white font-semibold"
+              href={~p"/users/log_in"}
+            >
+              Log in
+            </.link>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+  <%!-- <div>
+    Locale: <%= @locale %>
+  </div> --%>
+  </section>
+</header>
+<main class="w-full flex-1 flex justify-center items-center">
+  <section class="w-11/12 max-w-screen-xl h-full mx-auto">
+    <.flash_group flash={@flash} />
+    <%= @inner_content %>
+  </section>
+</main>
+<footer class="w-full bg-slate-900 text-white text-xs py-8">
+  <section class="w-11/12 max-w-screen-xl mx-auto flex flex-col justify-center items-center gap-2">
+    <h3>Application created for educational purposes only. Created by: <span class="uppercase tracking-widest font-bold text-brand">milica golocorbin</span></h3>
+    <.get_year/>
+  </section>
+</footer>
