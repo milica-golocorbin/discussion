@@ -37,7 +37,7 @@ defmodule DiscussionWeb.UserRegistrationControllerTest do
       response = html_response(conn, 200)
       assert response =~ email
       assert response =~ "Settings"
-      assert response =~ "Log out</a>"
+      assert response =~ "Log out"
     end
 
     test "render errors for invalid data", %{conn: conn} do

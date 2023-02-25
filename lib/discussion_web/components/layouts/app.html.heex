@@ -1,7 +1,7 @@
 <header class="w-full h-24">
   <section class="w-11/12 max-w-screen-xl h-full mx-auto flex justify-between items-center">
     <div>
-      <.link class="font-bold" href={~p"/"}>HOME</.link>
+      <.link class="font-bold underline decoration-brand decoration-4" href={~p"/"}>HOME</.link>
     </div>
     <nav class="h-full flex justify-center items-center">
       <ul class="h-full flex items-center gap-5 uppercase font-bold text-sm">
@@ -10,13 +10,22 @@
             <%= @current_user.email %>
           </li>
           <li>
-            <.link class="flex items-center gap-2 border-slate-900 border-r-4 pr-1" href={~p"/users/settings"}>
+            <.link
+              class="flex items-center gap-2 border-slate-900 border-r-4 pr-1"
+              href={~p"/users/settings"}
+            >
               <Heroicons.cog_6_tooth class="h-6 w-6 stroke-current" />
               <span>Settings</span>
             </.link>
           </li>
           <li>
-            <.link class="bg-brand shadow-lg shadow-brand/50 py-2.5 px-4 rounded-md text-white font-semibold" href={~p"/users/log_out"} method="delete">Log out</.link>
+            <.link
+              class="bg-brand shadow-lg shadow-brand/50 py-2.5 px-4 rounded-md text-white font-semibold"
+              href={~p"/users/log_out"}
+              method="delete"
+            >
+              Log out
+            </.link>
           </li>
         <% else %>
           <li class="hover:translate-y-[1px]">
@@ -38,7 +47,7 @@
         <% end %>
       </ul>
     </nav>
-  <%!-- <div>
+    <%!-- <div>
     Locale: <%= @locale %>
   </div> --%>
   </section>
@@ -51,7 +60,10 @@
 </main>
 <footer class="w-full bg-slate-900 text-white text-xs py-8">
   <section class="w-11/12 max-w-screen-xl mx-auto flex flex-col justify-center items-center gap-2">
-    <h3>Application created for educational purposes only. Created by: <span class="uppercase tracking-widest font-bold text-brand">milica golocorbin</span></h3>
-    <.get_year/>
+    <h3>
+      Application created for educational purposes only. Created by:
+      <span class="uppercase tracking-widest font-bold text-brand">milica golocorbin</span>
+    </h3>
+    <.get_year />
   </section>
 </footer>

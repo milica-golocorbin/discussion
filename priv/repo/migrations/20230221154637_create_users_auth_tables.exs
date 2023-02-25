@@ -21,6 +21,7 @@ defmodule Discussion.Repo.Migrations.CreateUsersAuthTables do
       timestamps(updated_at: false)
     end
 
+    # maybe add unique_index for email
     create index(:users_tokens, [:user_id])
     create unique_index(:users_tokens, [:context, :token])
   end
